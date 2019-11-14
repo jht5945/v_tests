@@ -8,7 +8,7 @@ struct IpResponse {
 }
 
 fn main() {
-    resp := http.get('https://hatter.ink/ip/ip.jsonp')
+    resp := http.get_text('https://hatter.ink/ip/ip.jsonp')
     ip_resp := json.decode(IpResponse, resp) or {
         println('error in decode: ' + resp)
         return
